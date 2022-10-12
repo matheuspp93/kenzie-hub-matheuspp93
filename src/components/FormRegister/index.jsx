@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { api } from "../../services/api";
 import { registro } from "../../constants/endpoints";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const schema = yup.object({
   name: yup.string().required("Nome é obrigatorio"),
@@ -43,6 +44,7 @@ const FormRegister = () => {
       .post(registro, data)
       .then((res) => {
         navigate("/login");
+        toast.success("Cadastro concluido com sucesso faça seu login");
       })
       .catch((err) => console.log(err));
   };

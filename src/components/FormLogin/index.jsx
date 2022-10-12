@@ -8,11 +8,17 @@ import { api } from "../../services/api";
 import { login } from "../../constants/endpoints";
 import { useNavigate } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 const schema = yup.object({
   email: yup
     .string()
     .email("Deve ser um email valído")
     .required("Deve ser um email valído"),
+  password: yup
+    .string()
+    .min(8, "No minimo 8 caracteres")
+    .required("Senha é obrigatório"),
 });
 
 const FormLogin = () => {
@@ -33,10 +39,12 @@ const FormLogin = () => {
         localStorage.setItem("@KenzieHub:id", resp.data.user.id);
         localStorage.setItem("@kenzieHub:user", resp.data.user.name);
         localStorage.setItem("@kenzieHub:curso", resp.data.user.course_module);
+        toast.success("Login com sucesso");
         navigate("/Dashboard");
       })
       .catch((err) => {
         console.log(err);
+        toast.error("Algo deu errado confira seus dados");
       });
   };
 

@@ -1,12 +1,16 @@
 import logo from "../../assets/img/Logo.svg";
+import Tecnlogies from "../../components/Technolgies";
+import TechProvaider from "../../contexts/TechContext";
 import * as S from "./style.dashboard";
 
 const Dashboard = () => {
   const module = localStorage.getItem("@kenzieHub:curso");
   const name = localStorage.getItem("@kenzieHub:user");
+
   const logOut = () => {
     window.localStorage.clear();
   };
+
   return (
     <>
       <S.Header>
@@ -21,10 +25,9 @@ const Dashboard = () => {
           <p>{module}</p>
         </S.ContainerUser>
         <S.ContainerError>
-          <h2>Ainda estamos em desenvolvimento </h2>
-          <p>
-            Nossa aplicação está sendo desenvolvida, em breve teremos novidade
-          </p>
+          <TechProvaider>
+            <Tecnlogies />
+          </TechProvaider>
         </S.ContainerError>
       </S.DashboardContainer>
     </>

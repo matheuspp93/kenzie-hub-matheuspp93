@@ -67,7 +67,7 @@ export const ContainerError = styled.section`
   height: 136px;
   padding: 0 5%;
   margin-top: 20px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray.quartiary};
+  /* border-bottom: 1px solid ${({ theme }) => theme.colors.gray.quartiary}; */
   @media (min-width: 1024px) {
     padding: 20px 20%;
   }

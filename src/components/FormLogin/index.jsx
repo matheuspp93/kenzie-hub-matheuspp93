@@ -3,26 +3,12 @@ import StyledInput from "../Input/style.input";
 import Button from "../Button/style.button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { api } from "../../services/api";
-import { login } from "../../constants/endpoints";
-import { useNavigate } from "react-router-dom";
-
-import { toast } from "react-toastify";
-
-const schema = yup.object({
-  email: yup
-    .string()
-    .email("Deve ser um email valído")
-    .required("Deve ser um email valído"),
-  password: yup
-    .string()
-    .min(8, "No minimo 8 caracteres")
-    .required("Senha é obrigatório"),
-});
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
+import { schema } from "../../validations/loginUser";
 
 const FormLogin = () => {
-  const navigate = useNavigate();
+  const { loginUser } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -30,23 +16,6 @@ const FormLogin = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
-  const loginUser = async (data) => {
-    await api
-      .post(login, data)
-      .then((resp) => {
-        localStorage.setItem("@KenzieHub:token", resp.data.token);
-        localStorage.setItem("@KenzieHub:id", resp.data.user.id);
-        localStorage.setItem("@kenzieHub:user", resp.data.user.name);
-        localStorage.setItem("@kenzieHub:curso", resp.data.user.course_module);
-        toast.success("Login com sucesso");
-        navigate("/Dashboard");
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error("Algo deu errado confira seus dados");
-      });
-  };
 
   return (
     <S.Form onSubmit={handleSubmit(loginUser)}>

@@ -4,18 +4,27 @@ export const ModalContainer = styled.section`
   position: fixed;
   height: 100%;
   top: 0;
+  left: 0;
+  right: 0;
   background-color: #00000080;
-  padding: 100px 50px 0 50px;
+  padding: 100px 50px 0 25px;
+
+  @media (min-width: 1024px) {
+    padding: 100px 50x 0 25px;
+  }
 `;
 
 export const ModalDiv = styled.div`
   background-color: ${({ theme }) => theme.colors.gray.primary};
-  width: 300px;
+  width: 250px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   padding: 10px;
   border-radius: 4px;
+  @media (min-width: 1024px) {
+    width: 300px;
+  }
   div {
     display: flex;
     justify-content: space-between;

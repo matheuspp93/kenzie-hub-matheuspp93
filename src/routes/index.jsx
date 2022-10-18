@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -14,7 +14,7 @@ const RoutesMain = () => (
     <Route element={<ProtectedRoutes />}>
       <Route path="/dashboard" element={<Dashboard />} />
     </Route>
-    {/* <Route path="*" element={<Navigate to="/home" />} /> */}
+    <Route path="*" element={<Navigate to="/home" />} />
   </Routes>
 );
 

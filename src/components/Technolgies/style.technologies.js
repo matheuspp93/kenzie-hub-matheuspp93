@@ -22,6 +22,12 @@ export const TechContainer = styled.div`
       line-height: 22.33px;
       color: ${({ theme }) => theme.colors.gray.withe};
     }
+    span {
+      font-size: 12.21px;
+      font-weight: 400;
+      line-height: 22.33px;
+      color: ${({ theme }) => theme.colors.gray.quartiary};
+    }
   }
 `;
 
@@ -42,5 +48,24 @@ export const TechTitle = styled.div`
     border-radius: 4px;
     border: none;
     color: ${({ theme }) => theme.colors.gray.withe};
+  }
+`;
+export const TilteMensagem = styled.span`
+  margin: 25px auto;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  color: ${({ theme }) => theme.colors.gray.withe};
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  width: 276px;
+  height: 76px;
+  background-color: ${({ theme }) => theme.colors.gray.quartiary};
+
+  @media (min-width: 1024px) {
+    font-size: 21px;
+    width: 445px;
   }
 `;

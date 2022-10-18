@@ -1,11 +1,13 @@
+import { useContext } from "react";
+
 import logo from "../../assets/img/Logo.svg";
 import Tecnlogies from "../../components/Technolgies";
+import { AuthContext } from "../../contexts/AuthContext";
 import TechProvaider from "../../contexts/TechContext";
 import * as S from "./style.dashboard";
 
 const Dashboard = () => {
-  const module = localStorage.getItem("@kenzieHub:curso");
-  const name = localStorage.getItem("@kenzieHub:user");
+  const { user } = useContext(AuthContext);
 
   const logOut = () => {
     window.localStorage.clear();
@@ -21,8 +23,8 @@ const Dashboard = () => {
       </S.Header>
       <S.DashboardContainer>
         <S.ContainerUser>
-          <h1>Olá {name}</h1>
-          <p>{module}</p>
+          <h1>Olá {user.name} </h1>
+          <p>{user.course_module}</p>
         </S.ContainerUser>
         <S.ContainerError>
           <TechProvaider>

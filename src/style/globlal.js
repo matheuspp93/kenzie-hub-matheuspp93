@@ -28,6 +28,7 @@ select{
 }
 body{
     background-color:${({ theme }) => theme.colors.gray.primary} ;
+    font-family: 'Inter', sans-serif;
 }
 
 `;

@@ -23,12 +23,13 @@ export const ModalAdd = () => {
           <h2>Cadastar Tecnologia</h2>
           <button onClick={() => setModal(false)}>X</button>
         </div>
+
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="">Nome</label>
+          <label htmlFor="title">Nome</label>
           <input type="text" placeholder="Ex: HTML" {...register("title")} />
           <span>{errors.title?.message}</span>
 
-          <label htmlFor="">Selecione o status</label>
+          <label htmlFor="status">Selecione o status</label>
           <select {...register("status")}>
             <option value="Iniciante">Iniciante</option>
             <option value="Intermediário">Intermediário</option>

@@ -8,9 +8,8 @@ export const Form = styled.form`
   padding: 18px 18px 0 18px;
   border-radius: 3.21px;
   width: 296px;
-  height: 387px;
-  margin: 0 auto;
-  margin-top: 16px;
+  height: 413px;
+  margin: 16px auto 0;
 
   h2 {
     margin-top: 19px;
@@ -35,6 +34,14 @@ export const Form = styled.form`
     line-height: 14.44px;
     color: ${({ theme }) => theme.colors.gray.quartiary};
     margin-top: 15px;
+  }
+
+  small {
+    margin-top: 5px;
+    font-size: 9.63px;
+    font-weight: 600;
+    line-height: 14.44px;
+    color: ${({ theme }) => theme.colors.gray.quartiary};
   }
 `;
 

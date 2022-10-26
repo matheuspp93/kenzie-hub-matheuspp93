@@ -26,7 +26,7 @@ const ModalEdit = () => {
             <option value="Avançado">Avançado</option>
           </select>
           <div>
-            <button type="submit">Salvar aletrações</button>
+            <S.EditTech type="submit">Salvar aletrações</S.EditTech>
             <S.EcluirTech onClick={() => deleteTech(tech.id)}>
               Excluir
             </S.EcluirTech>

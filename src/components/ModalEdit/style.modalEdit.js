@@ -63,7 +63,6 @@ export const ModalDiv = styled.div`
     select {
       background-color: ${({ theme }) => theme.colors.gray.tertiary};
       color: ${({ theme }) => theme.colors.gray.quartiary};
-
       height: 38.5px;
       border: 1.22px solid ${({ theme }) => theme.colors.gray.withe};
       border-radius: 3.21px;
@@ -72,18 +71,21 @@ export const ModalDiv = styled.div`
       font-weight: 400;
       line-height: 26px;
     }
-    button {
-      background-color: ${({ theme }) => theme.colors.pink.primary};
-      margin-top: 10px;
-      height: 38px;
-      border-radius: 4px;
-      width: 101px;
-    }
   }
 `;
 export const EcluirTech = styled.button`
-  background-color: ${({ theme }) => theme.colors.gray.tertiary};
+  background-color: ${({ theme }) => theme.colors.gray.secondary};
   margin-top: 10px;
   height: 38px;
   border-radius: 4px;
+  width: 61px;
+  color: ${({ theme }) => theme.colors.gray.withe};
+`;
+
+export const EditTech = styled.button`
+  background-color: ${({ theme }) => theme.colors.pink.primary};
+  margin-top: 10px;
+  height: 38px;
+  border-radius: 4px;
+  width: 114px;
 `;

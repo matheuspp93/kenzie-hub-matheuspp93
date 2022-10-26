@@ -13,8 +13,13 @@ export const TechContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.gray.primary};
-    border-radius: 4;
+    border-radius: 4px;
     margin: 10px 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.pink.tertiary};
+    }
 
     h3 {
       font-size: 14.21px;

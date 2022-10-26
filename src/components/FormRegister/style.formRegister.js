@@ -48,6 +48,13 @@ export const Form = styled.form`
     color: ${({ theme }) => theme.colors.gray.quartiary};
     margin-bottom: 10px;
   }
+  small {
+    margin-top: 5px;
+    font-size: 9.63px;
+    font-weight: 600;
+    line-height: 14.44px;
+    color: ${({ theme }) => theme.colors.gray.quartiary};
+  }
 `;
 
 export const Header = styled.header`

@@ -7,17 +7,20 @@ export const ContainerHome = styled.div`
 
   img {
     display: flex;
-    margin: 0 auto;
-    margin-top: 135px;
+    width: 205px;
+    margin: 135px auto 0;
+
+    @media (min-width: 1024px) {
+      width: 375px;
+    }
   }
 `;
 export const LinkStyled = styled(Link)`
   display: flex;
-  margin: 0 auto;
+  margin: 25px auto 0;
   cursor: pointer;
-  width: 183px;
-  height: 45px;
-  margin-top: 25px;
+  width: 200px;
+  height: 50px;
   background-color: ${({ theme }) => theme.colors.gray.secondary};
   border-radius: 8px;
   align-items: center;
@@ -28,5 +31,9 @@ export const LinkStyled = styled(Link)`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.gray.tertiary};
+  }
+
+  @media (min-width: 1024px) {
+    width: 300px;
   }
 `;
